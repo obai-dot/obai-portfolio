@@ -308,3 +308,8 @@
     padding: 25px 20px;
   }
 }
+.success-message {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: 500;
+}
