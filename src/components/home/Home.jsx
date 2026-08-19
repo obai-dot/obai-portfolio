@@ -42,7 +42,7 @@ function Home() {
           <div className="cube-face back">{"{ }"}</div>
           <div className="cube-face right">JS</div>
           <div className="cube-face left">CSS</div>
-          <div className="cube-face top">{"< />"}</div>
+          <div className="cube-face top">{"react"}</div>
           <div className="cube-face bottom">{"{ }"}</div>
         </div>
       </div>
