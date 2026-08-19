@@ -42,6 +42,21 @@ function Skills() {
       category: "Tools",
       icon: "G",
     },
+    {
+  name: "Python",
+  category: "Basics",
+  icon: "Py",
+},
+{
+  name: "Odoo",
+  category: "Basic Concepts",
+  icon: "O",
+},
+{
+  name: "n8n",
+  category: "Workflow Automation",
+  icon: "n8n",
+},
   ];
 
   return (
