@@ -326,3 +326,9 @@
     font-size: 22px;
   }
 }
+.project-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
+}

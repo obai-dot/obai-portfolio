@@ -3,29 +3,33 @@ import "./Projects.css";
 function Projects() {
   const projects = [
     {
-      title: "BotBuddy",
+      title: "Hujrah Village",
       description:
-        "An AI agent platform that helps businesses create and manage chat and voice bots for customer support and bookings.",
-      tech: ["React", "JavaScript", "Supabase", "n8n"],
+        "An interactive 3D web experience for Hujrah Village, featuring immersive navigation, responsive controls and a modern virtual environment.",
+      tech: ["React", "Three.js", "React Three Fiber", "Rapier"],
+      link: "https://hujrahvillage.vercel.app/",
       featured: true,
     },
     {
-      title: "Portfolio Website",
+      title: "TurnPoint",
       description:
-        "A modern personal portfolio designed to showcase my skills, projects and experience.",
-      tech: ["React", "CSS", "Vite"],
+        "A modern technology company website designed to present digital solutions, services and company information with a clean responsive experience.",
+      tech: ["React", "JavaScript", "Vite", "CSS"],
+      link: "https://turnpoint.vercel.app/",
     },
     {
-      title: "Library App",
+      title: "BotBuddy",
       description:
-        "A digital library application for searching books, booking books and reserving library halls.",
-      tech: ["React", "JavaScript", "Supabase"],
+        "An AI agent platform that helps businesses create and manage chat and voice bots for customer support, bookings and automated interactions.",
+      tech: ["React", "JavaScript", "Supabase", "n8n"],
+      link: "https://bot-buddy-ivory.vercel.app/",
     },
     {
-      title: "AI Chatbot",
+      title: "Eterna Clinic",
       description:
-        "An AI-powered chatbot project designed to interact with users and provide intelligent responses.",
-      tech: ["JavaScript", "AI", "API"],
+        "A premium responsive clinic website for dental, aesthetic and skincare services, designed with a luxury modern visual experience.",
+      tech: ["React", "Vite", "CSS", "Responsive UI"],
+      link: "https://eterna-clinic-pi.vercel.app/",
     },
   ];
 
@@ -33,7 +37,6 @@ function Projects() {
     <section className="projects" id="projects">
       <div className="projects-container">
 
-        {/* Heading */}
         <div className="projects-heading">
           <p>MY WORK</p>
 
@@ -42,27 +45,26 @@ function Projects() {
           </h2>
 
           <p className="projects-description">
-            Some of the projects I've worked on while
-            learning, experimenting and building real-world
-            applications.
+            Some of the projects I've built while working with modern web
+            technologies, responsive interfaces and interactive experiences.
           </p>
         </div>
 
-        {/* Projects */}
         <div className="projects-grid">
-
           {projects.map((project, index) => (
-            <div
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`project-card ${
                 project.featured ? "featured" : ""
               }`}
-              key={index}
+              key={project.title}
+              aria-label={`Open ${project.title}`}
             >
-
-              {/* Project Number */}
               <div className="project-top">
                 <span className="project-number">
-                  0{index + 1}
+                  {String(index + 1).padStart(2, "0")}
                 </span>
 
                 <span className="project-arrow">
@@ -70,7 +72,6 @@ function Projects() {
                 </span>
               </div>
 
-              {/* Fake Project Visual */}
               <div className="project-image">
                 <div className="project-glow"></div>
 
@@ -79,27 +80,21 @@ function Projects() {
                 </span>
               </div>
 
-              {/* Content */}
               <div className="project-content">
-
                 <h3>{project.title}</h3>
 
                 <p>{project.description}</p>
 
-                {/* Technologies */}
                 <div className="project-tech">
-                  {project.tech.map((technology, techIndex) => (
-                    <span key={techIndex}>
+                  {project.tech.map((technology) => (
+                    <span key={technology}>
                       {technology}
                     </span>
                   ))}
                 </div>
-
               </div>
-
-            </div>
+            </a>
           ))}
-
         </div>
 
       </div>

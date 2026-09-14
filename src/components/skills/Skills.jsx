@@ -9,7 +9,7 @@ function Skills() {
     },
     {
       name: "JavaScript",
-      category: "Frontend",
+      category: "Programming",
       icon: "JS",
     },
     {
@@ -28,42 +28,121 @@ function Skills() {
       icon: "TW",
     },
     {
+      name: "React Router",
+      category: "Routing",
+      icon: "RR",
+    },
+    {
+      name: "Vite",
+      category: "Build Tool",
+      icon: "V",
+    },
+    {
+      name: "Responsive Design",
+      category: "UI / UX",
+      icon: "UI",
+    },
+    {
       name: "Node.js",
       category: "Backend",
       icon: "N",
     },
     {
       name: "Supabase",
-      category: "Database",
+      category: "Database, Auth & Storage",
       icon: "S",
     },
     {
-      name: "Git & GitHub",
-      category: "Tools",
+      name: "SQL",
+      category: "Database",
+      icon: "SQL",
+    },
+    {
+      name: "REST APIs",
+      category: "API Integration",
+      icon: "API",
+    },
+    {
+      name: "Three.js",
+      category: "3D Web Development",
+      icon: "3D",
+    },
+    {
+      name: "React Three Fiber",
+      category: "3D / React",
+      icon: "R3F",
+    },
+    {
+      name: "React Three Drei",
+      category: "3D Utilities",
+      icon: "D",
+    },
+    {
+      name: "React Three Rapier",
+      category: "3D Physics",
+      icon: "RP",
+    },
+    {
+      name: "Blender",
+      category: "3D Modeling",
+      icon: "B",
+    },
+    {
+      name: "n8n",
+      category: "Workflow Automation",
+      icon: "n8n",
+    },
+    {
+      name: "EmailJS",
+      category: "Email Integration",
+      icon: "EJ",
+    },
+    {
+      name: "Git",
+      category: "Version Control",
       icon: "G",
     },
     {
-  name: "Python",
-  category: "Basics",
-  icon: "Py",
-},
-{
-  name: "Odoo",
-  category: "Basic Concepts",
-  icon: "O",
-},
-{
-  name: "n8n",
-  category: "Workflow Automation",
-  icon: "n8n",
-},
+      name: "GitHub",
+      category: "Development Platform",
+      icon: "GH",
+    },
+    {
+      name: "Vercel",
+      category: "Deployment",
+      icon: "▲",
+    },
+    {
+      name: "GitHub Pages",
+      category: "Deployment",
+      icon: "GP",
+    },
+    {
+      name: "VS Code",
+      category: "Development Tool",
+      icon: "VS",
+    },
+    {
+      name: "npm",
+      category: "Package Management",
+      icon: "npm",
+    },
+    {
+      name: "Python",
+      category: "Programming",
+      icon: "Py",
+    },
+    {
+      name: "Odoo",
+      category: "ERP Concepts",
+      icon: "O",
+    },
   ];
 
   return (
     <section className="skills" id="skills">
       <div className="skills-container">
 
-        {/* Heading */}
         <div className="skills-heading">
           <p>MY TECHNOLOGIES</p>
 
@@ -72,17 +151,17 @@ function Skills() {
           </h2>
 
           <p className="skills-description">
-            Technologies and tools I use to build modern
-            web applications and digital experiences.
+            Technologies and tools I use to build modern web
+            applications, interactive 3D experiences, automation
+            workflows and digital products.
           </p>
         </div>
 
-        {/* Skills */}
         <div className="skills-grid">
-          {skills.map((skill, index) => (
+          {skills.map((skill) => (
             <div
               className="skill-card"
-              key={index}
+              key={skill.name}
             >
               <div className="skill-icon">
                 {skill.icon}
