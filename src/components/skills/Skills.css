@@ -52,6 +52,8 @@
   );
 
   -webkit-background-clip: text;
+  background-clip: text;
+
   -webkit-text-fill-color: transparent;
 }
 
@@ -70,8 +72,7 @@
 .skills-grid {
   display: grid;
 
-  grid-template-columns:
-    repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 
   gap: 20px;
 }
@@ -100,7 +101,10 @@
 
   border: 1px solid rgba(255, 255, 255, 0.08);
 
-  transition: 0.35s;
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 
   position: relative;
 
@@ -113,9 +117,11 @@
   position: absolute;
 
   width: 120px;
+
   height: 120px;
 
   top: -60px;
+
   right: -60px;
 
   border-radius: 50%;
@@ -126,14 +132,13 @@
 
   opacity: 0;
 
-  transition: 0.35s;
+  transition: opacity 0.35s ease;
 }
 
 .skill-card:hover {
   transform: translateY(-8px);
 
-  border-color:
-    rgba(139, 92, 246, 0.5);
+  border-color: rgba(139, 92, 246, 0.5);
 
   box-shadow:
     0 15px 40px rgba(0, 0, 0, 0.3);
@@ -147,11 +152,13 @@
 
 .skill-icon {
   width: 50px;
+
   height: 50px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   border-radius: 12px;
@@ -168,7 +175,9 @@
 
   font-weight: 800;
 
-  transition: 0.3s;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
 }
 
 .skill-card:hover .skill-icon {
@@ -196,12 +205,56 @@
   margin: 0;
 }
 
+/* Show More */
+
+.skills-more {
+  display: flex;
+
+  justify-content: center;
+
+  margin-top: 40px;
+}
+
+.skills-more-button {
+  padding: 12px 24px;
+
+  border: 1px solid rgba(139, 92, 246, 0.4);
+
+  border-radius: 10px;
+
+  background: rgba(139, 92, 246, 0.08);
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.skills-more-button:hover {
+  transform: translateY(-2px);
+
+  background: rgba(139, 92, 246, 0.18);
+
+  border-color: #8b5cf6;
+
+  box-shadow:
+    0 10px 30px rgba(139, 92, 246, 0.15);
+}
+
 /* Responsive */
 
 @media (max-width: 1000px) {
   .skills-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -213,38 +266,12 @@
   .skills-grid {
     grid-template-columns: 1fr;
   }
-}
-.skills-more {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-}
 
-.skills-more-button {
-  padding: 12px 24px;
+  .skills-heading {
+    margin-bottom: 50px;
+  }
 
-  border: 1px solid rgba(139, 92, 246, 0.4);
-  border-radius: 10px;
-
-  background: rgba(139, 92, 246, 0.08);
-
-  color: white;
-
-  font-size: 14px;
-  font-weight: 700;
-
-  cursor: pointer;
-
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease,
-    border-color 0.3s ease;
-}
-
-.skills-more-button:hover {
-  transform: translateY(-2px);
-
-  background: rgba(139, 92, 246, 0.18);
-
-  border-color: #8b5cf6;
+  .skill-card {
+    min-height: 140px;
+  }
 }
