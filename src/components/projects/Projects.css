@@ -1,16 +1,12 @@
 .projects {
   min-height: 100vh;
-
   padding: 120px 10%;
-
   background: #0a0a10;
-
   color: white;
 }
 
 .projects-container {
   max-width: 1200px;
-
   margin: auto;
 }
 
@@ -18,29 +14,21 @@
 
 .projects-heading {
   text-align: center;
-
   max-width: 700px;
-
   margin: 0 auto 70px;
 }
 
 .projects-heading > p:first-child {
   color: #8b5cf6;
-
   font-size: 13px;
-
   font-weight: 700;
-
   letter-spacing: 4px;
-
   margin-bottom: 15px;
 }
 
 .projects-heading h2 {
   margin: 0;
-
   font-size: clamp(40px, 5vw, 65px);
-
   font-weight: 800;
 }
 
@@ -52,16 +40,14 @@
   );
 
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .projects-description {
   margin-top: 20px;
-
   color: #888;
-
   font-size: 16px;
-
   line-height: 1.7;
 }
 
@@ -69,10 +55,7 @@
 
 .projects-grid {
   display: grid;
-
-  grid-template-columns:
-    repeat(2, 1fr);
-
+  grid-template-columns: repeat(2, 1fr);
   gap: 25px;
 }
 
@@ -80,13 +63,12 @@
 
 .project-card {
   position: relative;
+  display: block;
 
   padding: 25px;
-
   min-height: 430px;
 
   border-radius: 18px;
-
   overflow: hidden;
 
   background:
@@ -98,14 +80,28 @@
 
   border: 1px solid rgba(255, 255, 255, 0.08);
 
-  transition: 0.4s;
+  text-decoration: none;
+  color: inherit;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.project-card:visited,
+.project-card:active,
+.project-card:focus {
+  text-decoration: none;
+  color: inherit;
 }
 
 .project-card:hover {
   transform: translateY(-10px);
 
-  border-color:
-    rgba(139, 92, 246, 0.5);
+  border-color: rgba(139, 92, 246, 0.5);
 
   box-shadow:
     0 25px 60px rgba(0, 0, 0, 0.35);
@@ -115,7 +111,6 @@
 
 .project-card.featured {
   grid-column: span 2;
-
   min-height: 500px;
 }
 
@@ -123,23 +118,17 @@
 
 .project-top {
   display: flex;
-
   justify-content: space-between;
-
   align-items: center;
 
   position: relative;
-
   z-index: 2;
 }
 
 .project-number {
   color: #8b5cf6;
-
   font-size: 13px;
-
   font-weight: 700;
-
   letter-spacing: 2px;
 }
 
@@ -148,7 +137,6 @@
   height: 40px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -157,15 +145,15 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 
   color: white;
-
   font-size: 20px;
 
-  transition: 0.3s;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
 }
 
 .project-card:hover .project-arrow {
   background: #8b5cf6;
-
   transform: rotate(45deg);
 }
 
@@ -179,11 +167,9 @@
   border-radius: 12px;
 
   position: relative;
-
   overflow: hidden;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -194,8 +180,7 @@
       #151025
     );
 
-  border:
-    1px solid rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.15);
 }
 
 .featured .project-image {
@@ -221,22 +206,21 @@
 
   opacity: 0.25;
 
-  transition: 0.5s;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
 }
 
 .project-card:hover .project-glow {
   transform: scale(1.5);
-
   opacity: 0.4;
 }
 
 .project-code {
   position: relative;
-
   z-index: 1;
 
   font-size: 60px;
-
   font-weight: 800;
 
   color: #8b5cf6;
@@ -255,23 +239,27 @@
   font-size: 25px;
 
   margin: 0 0 12px;
+
+  color: white;
+
+  text-decoration: none;
 }
 
 .project-content p {
   color: #888;
 
   font-size: 14px;
-
   line-height: 1.7;
 
   margin-bottom: 20px;
+
+  text-decoration: none;
 }
 
 /* Technologies */
 
 .project-tech {
   display: flex;
-
   flex-wrap: wrap;
 
   gap: 8px;
@@ -314,21 +302,36 @@
 }
 
 @media (max-width: 500px) {
+  .projects {
+    padding: 90px 5%;
+  }
+
+  .projects-heading {
+    margin-bottom: 50px;
+  }
+
   .project-card {
     min-height: 400px;
+    padding: 20px;
   }
 
   .project-image {
     height: 180px;
   }
 
+  .featured .project-image {
+    height: 180px;
+  }
+
   .project-content h3 {
     font-size: 22px;
   }
-}
-.project-card {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  cursor: pointer;
+
+  .project-content p {
+    font-size: 13px;
+  }
+
+  .project-code {
+    font-size: 50px;
+  }
 }
