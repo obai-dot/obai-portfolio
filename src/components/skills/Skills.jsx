@@ -1,11 +1,24 @@
+import { useState } from "react";
 import "./Skills.css";
 
 function Skills() {
+  const [showMore, setShowMore] = useState(false);
+
   const skills = [
     {
       name: "React",
       category: "Frontend",
       icon: "⚛️",
+    },
+    {
+      name: "Node.js",
+      category: "Backend",
+      icon: "N",
+    },
+    {
+      name: "Vercel",
+      category: "Deployment",
+      icon: "▲",
     },
     {
       name: "JavaScript",
@@ -41,11 +54,6 @@ function Skills() {
       name: "Responsive Design",
       category: "UI / UX",
       icon: "UI",
-    },
-    {
-      name: "Node.js",
-      category: "Backend",
-      icon: "N",
     },
     {
       name: "Supabase",
@@ -108,11 +116,6 @@ function Skills() {
       icon: "GH",
     },
     {
-      name: "Vercel",
-      category: "Deployment",
-      icon: "▲",
-    },
-    {
       name: "GitHub Pages",
       category: "Deployment",
       icon: "GP",
@@ -139,6 +142,10 @@ function Skills() {
     },
   ];
 
+  const visibleSkills = showMore
+    ? skills
+    : skills.slice(0, 3);
+
   return (
     <section className="skills" id="skills">
       <div className="skills-container">
@@ -158,7 +165,7 @@ function Skills() {
         </div>
 
         <div className="skills-grid">
-          {skills.map((skill) => (
+          {visibleSkills.map((skill) => (
             <div
               className="skill-card"
               key={skill.name}
@@ -173,6 +180,15 @@ function Skills() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="skills-more">
+          <button
+            className="skills-more-button"
+            onClick={() => setShowMore(!showMore)}
+          >
+            {showMore ? "Show Less" : "Show More"}
+          </button>
         </div>
 
       </div>
