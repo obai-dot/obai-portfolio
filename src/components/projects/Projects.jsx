@@ -23,6 +23,7 @@ function Projects() {
         "An AI agent platform that helps businesses create and manage chat and voice bots for customer support, bookings and automated interactions.",
       tech: ["React", "JavaScript", "Supabase", "n8n"],
       link: "https://bot-buddy-ivory.vercel.app/",
+      desktopOnly: true,
     },
     {
       title: "Eterna Clinic",
@@ -84,6 +85,13 @@ function Projects() {
                 <h3>{project.title}</h3>
 
                 <p>{project.description}</p>
+
+                {project.desktopOnly && (
+                  <div className="desktop-notice">
+                    <span className="desktop-notice-icon">🖥</span>
+                    <span>Best viewed on desktop</span>
+                  </div>
+                )}
 
                 <div className="project-tech">
                   {project.tech.map((technology) => (
